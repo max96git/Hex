@@ -1,28 +1,26 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import Signup from './components/Signup';
-import Login from './components/Login';
-import Inventory from './components/Inventory';
-import Avatar from './components/Avatar';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Homepage from './components/Homepage';
-import GamesPage from './components/GamesPage';      // Import Games Page
-import GameDetails from './components/GameDetails';  // Import Game Details Page
-import CreateGame from './components/CreateGame';    // Import Create Game Page
+import GamesPage from './components/GamesPage';
+import CreateGame from './components/CreateGame';
+import GameDetails from './components/GameDetails';
+import NotFound from './components/NotFound';  // Optional for 404
 
 const App = () => {
   return (
-    <div>
+    <Router>
       <Switch>
-        <Route path="/" exact component={Homepage} />
-        <Route path="/signup" component={Signup} />
+        <Route exact path="/" component={Homepage} />
+    <Route path="/signup" component={Signup} />
         <Route path="/login" component={Login} />
         <Route path="/inventory/:userId" component={Inventory} />
         <Route path="/avatar/:userId" component={Avatar} />
-        <Route path="/games" component={GamesPage} />        {/* Games Page route */}
-        <Route path="/games/:id" component={GameDetails} />  {/* Game Details route */}
-        <Route path="/create-game" component={CreateGame} /> {/* Create Game route */}
+        <Route path="/games" component={GamesPage} />
+        <Route path="/create-game" component={CreateGame} />
+        <Route path="/games/:id" component={GameDetails} />
+        <Route component={NotFound} /> {/* Optional 404 handling */}
       </Switch>
-    </div>
+    </Router>
   );
 };
 
