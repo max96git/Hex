@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
 const inventoryRoutes = require('./routes/inventory');
+const gameRoutes = require('./routes/game');
 
 dotenv.config();
 const app = express();
@@ -18,6 +19,7 @@ connectDB();
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/inventory', inventoryRoutes);
+app.use('/api/games', gameRoutes);
 
 // Start Server
 const PORT = process.env.PORT || 5000;
