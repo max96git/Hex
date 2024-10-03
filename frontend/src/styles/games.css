@@ -1,0 +1,38 @@
+.games-page {
+  padding: 2rem;
+}
+
+.games-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.game-card {
+  background-color: #2c2c34;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 200px;
+}
+
+.game-card h3 {
+  margin: 0;
+}
+
+.game-code iframe {
+  border: none;
+  background-color: white;
+}
+
+.btn {
+  background-color: #ff4747;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 1rem 0;
+}
+
+.btn:hover {
+  background-color: #ff2020;
+}
